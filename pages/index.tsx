@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { MainLayout } from '../components/MainLayout';
 import Link from 'next/link';
+import Image from 'next/image';
+import { MainLayout } from '../components/MainLayout';
 import { BreedsCard } from '../interfaces/cards';
 import { fetchData } from '../services/fetchData';
 
@@ -75,7 +76,7 @@ export default function Cards({ cards: serverCards }: cardsPageProps) {
                   href={`/breed/${card.id}?pet=${arrayName}`}
                   passHref
                 >
-                  <img
+                  <Image
                     src={card.url}
                     width={320}
                     height={320}

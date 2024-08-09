@@ -1,7 +1,11 @@
 import Link from 'next/link';
+import { ReactNode } from 'react';
 import Head from 'next/head';
-
-export function MainLayout({ children, title = 'Breeds App' }) {
+interface MainLayoutProps {
+  children: ReactNode;
+  title?: string;
+}
+export function MainLayout({ children, title = 'Breeds App' }: MainLayoutProps) {
   return (
     <>
       <Head>

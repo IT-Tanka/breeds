@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
-import { MainLayout } from '../../components/MainLayout';
+import { GetServerSidePropsContext, GetServerSideProps } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { MainLayout } from '../../components/MainLayout';
 import { BreedsCard } from '../../interfaces/cards';
 import { fetchData } from '../../services/fetchData';
 
@@ -68,7 +70,7 @@ export default function Breed({ breed: serverCard }: breedPageProps) {
                 </h1>
 
                 <div className="my-6">
-                    <img
+                    <Image
                         src={breed.url}
                         width={300}
                         height={300}
@@ -82,7 +84,7 @@ export default function Breed({ breed: serverCard }: breedPageProps) {
                     {relatedImages.length > 0 ? (
                         relatedImages.map((image) => (
                             <li key={image.id} className="border rounded-lg overflow-hidden shadow-md">
-                                <img
+                                <Image
                                     src={image.url}
                                     width={150}
                                     height={150}
@@ -107,7 +109,7 @@ export default function Breed({ breed: serverCard }: breedPageProps) {
     );
 }
 
-export const getServerSideProps = async (context) => {
+export const getServerSideProps = async (context: GetServerSidePropsContext) => {
     const { id, pet } = context.query;
     if (pet !== 'cat' && pet !== 'dog') {
         return {
