@@ -1,3 +1,30 @@
+## BREEDS_APP
+Pet Breed Explorer
+
+### Task
+
+Create a web application using Next.js, TypeScript, and Tailwind CSS. The homepage should display a list of random breeds of cats and dogs in card format. Each card should show an image and the breed name. Clicking on a card should navigate the user to a breed page with detailed information about the selected breed and a gallery of images of animals of that breed.
+
+### Implementation
+
+To accomplish this task, I used a modern technology stack: Next.js for server-side rendering and routing, TypeScript for type safety and code reliability, and Tailwind CSS for quick and flexible styling of components.
+
+**API Integration**: I integrated two external APIs — The Dog API and The Cat API. These APIs provide information and images of dog and cat breeds, respectively. On the homepage, I set up asynchronous requests to fetch random breed data from these APIs. Each breed is displayed as a card with an image and name.
+
+**Application Structure**: I created two main pages. The homepage displays a list of breeds as cards using the data fetched from the APIs. Clicking on a card redirects the user to a separate breed page, where detailed information about the selected breed is shown, along with an additional gallery of images if available from the APIs.
+
+**State Management**: I used React Hooks, such as `useState` and `useEffect`, to manage data fetching and component state efficiently.
+
+**Styling**: Tailwind CSS was used to create an adaptive and visually appealing design for the cards and pages, ensuring flexible styling and maintaining clean, readable code.
+
+Thus, the application meets all the requirements of the task, providing users with an intuitive interface to view information about cat and dog breeds.
+
+
+
+
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
